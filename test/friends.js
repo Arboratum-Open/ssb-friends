@@ -1,3 +1,4 @@
+var log = require('why-is-node-running')
 var ssbKeys = require('ssb-keys')
 var cont    = require('cont')
 var tape    = require('tape')
@@ -279,6 +280,7 @@ tape('indirect friends', function (t) {
 
   t.test('cleanup', function (t) {
     ssbServer.close()
+    setTimeout(log, 5e3)
     t.end()
   })
 
