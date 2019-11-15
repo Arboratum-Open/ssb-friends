@@ -7,7 +7,7 @@ function createLog(message) {
   return function () {
     if(logged) return
     logged = true
-    console.error(message)
+    console.trace(message)
   }
 }
 
@@ -40,9 +40,9 @@ module.exports = function (layered) {
     streamNotify({from:j, to:k, value:toLegacyValue(v)})
   })
 
-  var log_legacy1 = createLog('ssb-friends: createFriendStream legacy api used')
-  var log_legacy2 = createLog('ssb-friends: get legacy api used')
-  var log_legacy3 = createLog('ssb-friends: stream legacy api used')
+  var log_legacy1 = createLog('ssb-friends: legacy createFriendStream API is deprecated')
+  var log_legacy2 = createLog('ssb-friends: legacy get() API is deprecated')
+  var log_legacy3 = createLog('ssb-friends: legacy stream() API is deprecated')
 
   return {
     createFriendStream: function (opts) {
